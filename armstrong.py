@@ -1,3 +1,5 @@
+# Beginner project 2.
+
 def armstrong(number):
     '''
     Allows the user to check whether a given number
