@@ -10,3 +10,9 @@ Solutions for https://github.com/jorgegonzalez/beginner-projects#beginner-projec
 ##### 5) [Rock Paper Scissors Game](https://github.com/facufrau/beginner-projects-solutions/blob/master/rockpaperscissors.py)
 ##### 6) [Coin Estimator By Weight]()
 ##### 7) [Mad Libs Story Maker](https://github.com/facufrau/beginner-projects-solutions/blob/master/madlibs.py)
+
+### Other beginner projects:
+
+Beginner projects that i found in internet and made my own version.
+
+##### 1) [Random number generator] (https://github.com/facufrau/beginner-projects-solutions/blob/master/num_generator.py)
