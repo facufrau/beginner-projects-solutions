@@ -16,3 +16,4 @@ Solutions for https://github.com/jorgegonzalez/beginner-projects#beginner-projec
 Beginner projects that i found in internet and made my own version.
 
 ##### 1) [Random number generator](https://github.com/facufrau/beginner-projects-solutions/blob/master/num_generator.py)
+######  1.1) [Random number generator with Functions](https://github.com/facufrau/beginner-projects-solutions/blob/master/num_generator_functions.py)
