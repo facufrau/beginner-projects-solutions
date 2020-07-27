@@ -2,7 +2,8 @@
 
 from time import sleep
 
-coins = {'penny': {'weight': 2.500, 'fit': 50, 'value': 0.01},
+coins = {
+        'penny': {'weight': 2.500, 'fit': 50, 'value': 0.01},
         'nickel': {'weight': 5.000, 'fit': 40, 'value': 0.05},
         'dime': {'weight': 2.268, 'fit': 50, 'value': 0.10},
         'quarter': {'weight': 5.670, 'fit': 40, 'value': 0.25},
