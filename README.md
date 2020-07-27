@@ -8,9 +8,9 @@
 3.1) [Gui version of magic ball](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/magic_8ballgui.py) 
 4) [Pythagorean Triples Checker](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/pythagorean.py)
 5) [Rock Paper Scissors Game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/rockpaperscissors.py)
-6) [Coin Estimator By Weight]()
+6) [Coin Estimator By Weight](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/coin_estimator.py)
 7) [Mad Libs Story Maker](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/madlibs.py)
-
+8) [Change calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/changecalc.py)
 #### Other beginner projects:
 
 ### Beginner projects that i found in internet and made my own version.
