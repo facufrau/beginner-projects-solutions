@@ -5,7 +5,7 @@
 1) [99 bottles](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/99bottles.py)
 2) [Armstrong Number](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/armstrong.py)
 3) [Magic 8 Ball](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/magic_8ball.py)
- 3.1) [Gui version of magic ball](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/magic_8ballgui.py) 
+3.1) [Gui version of magic ball](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/magic_8ballgui.py) 
 4) [Pythagorean Triples Checker](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/pythagorean.py)
 5) [Rock Paper Scissors Game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/rockpaperscissors.py)
 6) [Coin Estimator By Weight]()
