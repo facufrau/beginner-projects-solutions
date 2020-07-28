@@ -11,6 +11,7 @@
 6) [Coin Estimator By Weight](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/coin_estimator.py)
 7) [Mad Libs Story Maker](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/madlibs.py)
 8) [Change calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/changecalc.py)
+9) [Mean, median, mode functions](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/mean_median_mode.py)
 ### Other beginner projects:
 
 #### Beginner projects that i found in internet and made my own version.
