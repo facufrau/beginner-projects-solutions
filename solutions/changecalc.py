@@ -16,19 +16,19 @@
 '''
 while True:
     try:
-        money = float(input('Please enter the money received: '))
-        if money > 0:
-            break
-    except:
-        print('Enter a valid amount of money (for example 100.50)')
-
-while True:
-    try:
         price = float(input('Please enter the price of the object: '))
         if price > 0:
             break
     except:
         print('Enter a valid price (for example 35.66)')
+
+while True:
+    try:
+        money = float(input('Please enter the money received: '))
+        if money > 0:
+            break
+    except:
+        print('Enter a valid amount of money (for example 100.50)')
 
 penny, nickel, dime, quarter = 0, 0, 0, 0
 change = round(money - price, 2)
@@ -49,4 +49,4 @@ while cents > 0:
         cents -= 1
 
 print(f'The total change is {change}')
-print(f'You will need \n-->{quarter} quarter(s)\n-->{dime} dime(s)\n-->{nickel} nickel(s)\n-->{penny} penny(ies)')
+print(f'You will need: \n-->{quarter} quarter(s)\n-->{dime} dime(s)\n-->{nickel} nickel(s)\n-->{penny} penny(ies)')
