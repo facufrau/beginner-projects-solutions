@@ -13,6 +13,7 @@
 8) [Change calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/changecalc.py)
 9) [Mean, median, mode functions](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/mean_median_mode.py)
 10) [Guess the number game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/guess_number.py)
+11) [Multiplication table](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/mult_tables.py)
 ### Other beginner projects:
 
 #### Beginner projects that i found in internet and made my own version.
