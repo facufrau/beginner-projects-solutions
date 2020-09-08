@@ -1,5 +1,5 @@
 #Beginner project 14 - Hangman Game
-#Based in Al Sweigart - Invent your won computer games with Python Book.
+#Based in Al Sweigart - Invent your own computer games with Python Book.
 import random
 HANGMAN_PICS = ['''
     +---+
