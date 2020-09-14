@@ -30,7 +30,7 @@ max_value = 25
 coprimos = []
 
 for i in range (1, max_value + 1):
-    for j in range (1, max_value + 1):
+    for j in range (i, max_value + 1):
         result = find_mcd(i, j)
         if result == 1:
             coprimos.append((i, j))
