@@ -24,3 +24,4 @@
 1) [Random number generator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/num_generator.py)\
   1.1) [Random number generator with Functions](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/num_generator_functions.py)
 2) [Coprime-pairs checker](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/coprimos.py)
+3) [Mendoza covid stats reports and csv](https://github.com/facufrau/beginner-projects-solutions/tree/master/reportes_covid)
