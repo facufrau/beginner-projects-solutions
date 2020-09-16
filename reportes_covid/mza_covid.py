@@ -9,7 +9,7 @@ import time
 base_url = "http://www.prensa.mendoza.gov.ar/coronavirus-comunicado-del-ministerio-de-salud-desarrollo-social-y-deportes-de-mendoza-"
 print(f"This program will request and download 200 reports from this website \n{base_url}")
 input("Press enter to continue\n")
-for i in range(185, 205):
+for i in range(1, 200):
     url = base_url + str(i)
     response = requests.get(url)
     
