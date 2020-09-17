@@ -20,6 +20,7 @@ Subgoals:
     Create a "Replay" option.
 '''
 import random
+from time import sleep
 #Create a Card and Deck classes.
 
 class Card:
@@ -97,16 +98,44 @@ for i in range(len(deck.cards)):
 # Create a list with 2 sublists, for each player to store played cards.
 board_cards = [[],[]]
 
+def append_cards(player_name, board):
+    '''Append all cards to the player who wins the round.'''
+    for sublist in board:
+        for c in sublist:
+            player_name.hand.append(c)
+
 # Each player plays one card and check the value.
 def play_round():
+    sleep(0.5)
+    global board_cards
     board_cards[0].append(player1.play_card())
     board_cards[1].append(player2.play_card())
 
-play_round()
+    if board_cards[0][-1].val > board_cards[1][-1].val:
+        cards_qty = len(board_cards[0]) + len(board_cards[1])
+        print(f'{player1.name} wins this round and take {cards_qty} cards')
+        append_cards(player1, board_cards)
+        board_cards = [[],[]]
 
-if board_cards[0][-1].val > board_cards[1][-1].val:
-    print(f'{player1.name} wins this round and take {len(board_cards)} cards')
-elif board_cards[0][-1].val < board_cards[1][-1].val:
-    print(f'{player2.name} wins this round and take {len(board_cards)} cards')
-else:
-    print(f'The round ended in tie, each player plays 2 more cards:\none facing up and one facing down')
+    elif board_cards[0][-1].val < board_cards[1][-1].val:
+        cards_qty = len(board_cards[0]) + len(board_cards[1])
+        print(f'{player2.name} wins this round and take {cards_qty} cards')
+        append_cards(player2, board_cards)
+        board_cards = [[],[]]
+    else:
+        print(f'The round ended in tie, each player plays 2 more cards:\none facing up and one facing down')
+        board_cards[0].append(player1.play_card())
+        board_cards[1].append(player2.play_card())
+        play_round()
+
+#Loop until one of each player has all the cards.
+while True:
+    play_round()
+
+    if len(player1.hand) == 52 and len(player2.hand) == 0:
+        print(f'Congratulations {player1.name}! You won the game!\nSorry, {player2.name} you lost the game...')
+        break
+
+    elif len(player1.hand) == 52 and len(player2.hand) == 0:
+        print(f'Congratulations {player2.name}! You won the game!\nSorry, {player1.name} you lost the game...')
+        break
