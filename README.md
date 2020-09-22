@@ -17,7 +17,7 @@
 12) [Fibonacci sequence](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/fibonacci.py)
 13) [Base Jumper - Not finished](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/base_jumper.py)
 14) [Hangman game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/hangman.py)
-15) [War card game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/war_card_game.py)
+15) [War card game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/war_card_game.py)\
 15.1) [War card game - OOP - Not finished](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/war_card_game_oop.py)
 ### Other beginner projects:
 
