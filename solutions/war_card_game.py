@@ -19,123 +19,96 @@ Finally, Those who collect the 52 cards at first is declared as the winner !!!
 Subgoals:
     Create a "Replay" option.
 '''
+
 import random
 from time import sleep
-#Create a Card and Deck classes.
 
-class Card:
-    '''
-    A class for representing a single card.
-    '''
-    def __init__(self, suit, rank, val):
-        self.suit = suit
-        self.rank = rank
-        self.val = val
+play = True
+while play:
 
-    def show(self):
-        print(f'{self.rank} of {self.suit} - value {self.val}')
+    # Build a dictionary with a deck of cards.
+    suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
+    numbers = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
+    deck = []
+    DECK_VALUE = {}
+    for s in suits:
+        for n in numbers:
+            deck.append(n + ' of ' +s)
+            DECK_VALUE[n + ' of ' +s] = numbers.index(n) + 1
+    random.shuffle(deck)
 
-class Deck:
-    '''
-    A class for representing a 52 card Deck.
-    '''
-    def __init__(self):
-        self.cards = []
-        self.build()
+    print('Welcome to the war-card game.')
+    # Get name of the players and initialize player hands.
+    while True:
+        player_1 = input('Player 1 name: ')
+        player_2 = input('Player 2 name: ')
 
-    def build(self):
-        ranks = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
-        for s in ['Spades', 'Clubs', 'Diamonds', 'Hearts']:
-            for v in range(1,14):
-                self.cards.append(Card(s, ranks[v-1], v))
+        if player_1 != player_2:
+            player_1_cards = []
+            player_2_cards = []
+            break
 
-    def show(self):
-        for card in self.cards:
-            card.show()
+    player_1_cards = deck[:len(deck)//2]
+    player_2_cards = deck[len(deck)//2:]
+    player_1_pile = []
+    player_2_pile = []
+    round = 1
 
-    def shuffle(self):
-        random.shuffle(self.cards)
+    while player_1_cards or player_2_cards:
+        card_1 = player_1_cards.pop(random.randint(0, len(player_1_cards) - 1))
+        card_2 = player_2_cards.pop(random.randint(0, len(player_2_cards) - 1))
+        print(card_1)
+        print(card_2)
 
-    def draw_card(self):
-        return self.cards.pop()
+        if DECK_VALUE[card_1] == DECK_VALUE[card_2]:
+            player_1_pile.append(card_1)
+            try:
+                player_1_pile.append(player_1_cards.pop())
+            except:
+                print(f'{player_1} lost...\n{player_2} wins!!')
 
-class Player():
-    '''
-    A class for representing players in card game.
-    '''
-    def __init__(self, name):
-        self.name = name
-        self.hand = []
+            player_2_pile.append(card_2)
+            try:
+                player_2_pile.append(player_2_cards.pop())
+            except:
+                print(f'{player_2} lost...\n{player_1} wins!!')
 
-    def draw(self, deck):
-        self.hand.append(deck.draw_card())
-        return self
+        elif DECK_VALUE[card_1] > DECK_VALUE[card_2]:
 
-    def show_hand(self):
-        for card in self.hand:
-            card.show()
+            player_1_pile.extend(player_2_pile)
+            for c in player_1_pile:
+                player_1_cards.insert(0, c)
 
-    def play_card(self):
-        ''' Plays the first card in hand list.'''
-        return self.hand.pop(0)
+            player_1_cards.insert(0, card_1)
+            player_1_cards.insert(0, card_2)
 
+            player_1_pile = []
+            player_2_pile = []
 
-print("--------Welcome to the war game--------")
+        elif DECK_VALUE[card_1] < DECK_VALUE[card_2]:
 
-# Create objects for the game and initialize values.
-player1 = Player(input("Enter the 1st player name: "))
-player2 = Player(input("Enter the 2nd player name: "))
-deck = Deck()
-deck.shuffle()
+            player_2_pile.extend(player_1_pile)
+            for c in player_2_pile:
+                player_2_cards.insert(0, c)
 
-# Divide half of the cards for each player.
-for i in range(len(deck.cards)):
-    if i % 2 == 0:
-        player1.draw(deck)
-    else:
-        player2.draw(deck)
+            player_2_cards.insert(0, card_1)
+            player_2_cards.insert(0, card_2)
 
-# Create a list with 2 sublists, for each player to store played cards.
-board_cards = [[],[]]
+            player_1_pile = []
+            player_2_pile = []
 
-def append_cards(player_name, board):
-    '''Append all cards to the player who wins the round.'''
-    for sublist in board:
-        for c in sublist:
-            player_name.hand.append(c)
+        print(f'Round: {round}')
+        print(f'{player_1}: {len(player_1_cards)} cards, {len(player_1_pile)} pile')
+        print(f'{player_2}: {len(player_2_cards)} cards, {len(player_2_pile)} pile')
+        #input('Press enter to continue round')
+        round += 1
 
-# Each player plays one card and check the value.
-def play_round():
-    sleep(0.5)
-    global board_cards
-    board_cards[0].append(player1.play_card())
-    board_cards[1].append(player2.play_card())
-
-    if board_cards[0][-1].val > board_cards[1][-1].val:
-        cards_qty = len(board_cards[0]) + len(board_cards[1])
-        print(f'{player1.name} wins this round and take {cards_qty} cards')
-        append_cards(player1, board_cards)
-        board_cards = [[],[]]
-
-    elif board_cards[0][-1].val < board_cards[1][-1].val:
-        cards_qty = len(board_cards[0]) + len(board_cards[1])
-        print(f'{player2.name} wins this round and take {cards_qty} cards')
-        append_cards(player2, board_cards)
-        board_cards = [[],[]]
-    else:
-        print(f'The round ended in tie, each player plays 2 more cards:\none facing up and one facing down')
-        board_cards[0].append(player1.play_card())
-        board_cards[1].append(player2.play_card())
-        play_round()
-
-#Loop until one of each player has all the cards.
-while True:
-    play_round()
-
-    if len(player1.hand) == 52 and len(player2.hand) == 0:
-        print(f'Congratulations {player1.name}! You won the game!\nSorry, {player2.name} you lost the game...')
-        break
-
-    elif len(player1.hand) == 52 and len(player2.hand) == 0:
-        print(f'Congratulations {player2.name}! You won the game!\nSorry, {player1.name} you lost the game...')
-        break
+        if len(player_1_cards) == 0:
+            print(f'{player_1} lost... {player_2} won!!')
+            break
+        elif len(player_2_cards) == 0:
+            print(f'{player_2} lost... {player_1} won!!')
+            break
+    again = input('Do you want to play again? yes/no:  ')
+    if again.lower() in ['no', 'n']:
+        play = False
