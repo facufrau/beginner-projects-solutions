@@ -19,6 +19,7 @@
 14) [Hangman game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/hangman.py)
 15) [War card game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/war_card_game.py)\
 15.1) [War card game - OOP - Not finished](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/war_card_game_oop.py)
+16) [Restaurant Menu Calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/menu_calculator.py)
 ### Other beginner projects:
 
 #### Beginner projects that i found in internet and made my own version.
