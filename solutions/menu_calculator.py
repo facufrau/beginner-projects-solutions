@@ -33,22 +33,46 @@ menu = [[1, "Chicken Strips", 3.50], [2, "French Fries", 2.50], [3, "Hamburger",
 [4, "Hotdog", 3.50], [5, "Large Drink", 1.75], [6, "Medium Drink", 1.50],
 [7, "Milk Shake", 2.25], [8, "Salad", 3.75], [9, "Small Drink", 1.25]]
 
-print('*** Welcome to my restaurant ***\n----------MENU----------')
-for item in menu:
-    print(f'{item[0]} - {item[1]} - ${item[2]:.2f}')
+flag = True
+while flag:
+    print('*** Welcome to my restaurant ***\n----------MENU----------')
+    for item in menu:
+        print(f'{item[0]} - {item[1]} - ${item[2]:.2f}')
 
-while True:
-    order = input('Please enter the order numbers with no spaces between: ')
-    try:
-        order_list = [int(x) for x in order if int(x) > 0]
-        break
-    except:
-        print('Please enter only numbers in the order.')
+    while True:
+        order = input('Please enter the order numbers with no spaces between: ')
+        if not order:
+            continue
+        try:
+            order_list = [int(x) for x in order if int(x) > 0]
+            break
+        except:
+            print('Please enter only numbers in the order.')
 
-print(order)
-print(order_list)
+    #Initalize variables for printing orders and price.
+    total_price = 0.00
+    orders = {}
+    print('You order has the following items: ')
+    for i in order_list:
+        # Adds up total price.
+        total_price += menu[i-1][2]
 
-total_price = 0.00
-for i in order_list:
-    total_price +=
+        # Stores in a dictionary how many of each item was ordered.
+        product = menu[i-1][1]
+        if product not in orders:
+            orders[product] = 0
+        orders[product] += 1
 
+    for item, amount in orders.items():
+            print(f'- {amount} -- {item}')
+    print(f'The total price is ${total_price:.2f}')
+
+    while True:
+        again = input('Do you want to enter another order? y/n ')
+        if again.lower() in ['n', 'no']:
+            flag = False
+            break
+        elif again.lower() in ['y', 'yes']:
+            break
+        else:
+            print('Please enter "y" or "n"')
