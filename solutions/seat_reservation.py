@@ -54,31 +54,46 @@ def check_seats(seat_list):
     else:
         return False
 
-
 print('Welcome to my theater, this are the seats: ')
-print_seats(seats)
+flag = True
+while flag:
+    print_seats(seats)
+    while not check_seats(seats):
+        while True:
+            reserve = input('Which seat do you want to reserve (1-9): ')
+            if not reserve:
+                continue
+            try:
+                reserve = int(reserve) - 1
+                if 0 <= reserve < 9:
+                    break
+            except:
+                print('Please enter only a number between 1-9: ')
 
-while True:
-    reserve = input('Which seat do you want to reserve (1-9): ')
-    if not reserve:
-        continue
-    try:
-        reserve = int(reserve) - 1
-        if 0 <= reserve < 9:
+        row = reserve // 3
+        col = reserve % 3
+
+        if seats[row][col] == '-':
+            print('Seat available, now reserving...')
+            time.sleep(1)
+            seats[row][col] = 'X'
+            print_seats(seats)
             break
-    except:
-        print('Please enter only a number between 1-9: ')
+        else:
+            print('Seat unavailable, please choose another...')
+            time.sleep(1)
+            continue
 
-row = reserve % 3
-col = reserve // 3
+    if check_seats(seats):
+        print('All seats occupied!')
+        break
 
-if seats[row][col] == '-':
-    print('Seat available, now reserving...')
-    time.sleep(1)
-    seats[row][col] = 'X'
-else:
-    print('Seat unavailable, please choose another.')
-
-print_seats(seats)
-
-print(check_seats(seats))
+    while True:
+        again = input('Do you want to reserve again? y/n ')
+        if again.lower() in ['n', 'no']:
+            flag = False
+            break
+        elif again.lower() in ['y', 'yes']:
+            break
+        else:
+            print('Please enter "y" or "n"')
