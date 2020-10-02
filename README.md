@@ -1,5 +1,5 @@
 ## Beginner projects solutions:
-
+This repository contains my solutions for beginner projects in Jorge Gonzalez repository as shown below and personal projects I found on internet for practicing Python.
 ### Solutions for https://github.com/jorgegonzalez/beginner-projects#beginner-projects
 
 1) [99 bottles](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/99bottles.py)
