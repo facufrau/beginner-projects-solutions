@@ -1,5 +1,6 @@
 ## Beginner projects solutions:
 This repository contains my solutions for beginner projects in Jorge Gonzalez repository as shown below and personal projects I found on internet for practicing Python.
+
 ### Solutions for https://github.com/jorgegonzalez/beginner-projects#beginner-projects
 
 1) [99 bottles](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/99bottles.py)
@@ -21,6 +22,8 @@ This repository contains my solutions for beginner projects in Jorge Gonzalez re
 15.1) [War card game - OOP - Not finished](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/war_card_game_oop.py)
 16) [Restaurant Menu Calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/menu_calculator.py)
 17) [Seat Reservation](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/seat_reservation.py)
+18) [Dice rolling simulator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/dice_roller.py)
+
 ## Other beginner projects:
 
 ### Beginner projects that i found in internet and made my own version.
