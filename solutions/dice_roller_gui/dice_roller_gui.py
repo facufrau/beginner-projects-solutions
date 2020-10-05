@@ -15,7 +15,7 @@ Bonus:
 import random
 import PySimpleGUI as sg
 
-sg.theme("DarkAmber")
+sg.theme("DarkTeal7")
 
 #Layout
 layout = [ [sg.Text('N° of dice: '), sg.InputText()],
