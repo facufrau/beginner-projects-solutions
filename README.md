@@ -23,6 +23,7 @@ This repository contains my solutions for beginner projects in Jorge Gonzalez re
 16) [Restaurant Menu Calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/menu_calculator.py)
 17) [Seat Reservation](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/seat_reservation.py)
 18) [Dice rolling simulator](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/dice_roller.py)
+19) [Count and fix: "Green eggs and ham"](https://github.com/facufrau/beginner-projects-solutions/tree/master/solutions/Count%20and%20Fix%20Green%20Eggs%20and%20Ham)
 
 ## Other beginner projects:
 
