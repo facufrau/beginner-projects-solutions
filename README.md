@@ -26,6 +26,7 @@ This repository contains my solutions for beginner projects in Jorge Gonzalez re
 19) [Count and fix: "Green eggs and ham"](https://github.com/facufrau/beginner-projects-solutions/tree/master/solutions/Count%20and%20Fix%20Green%20Eggs%20and%20Ham)
 20) [What is my number](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/what_is_my_number.py)
 21) [Factors of a number](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/factors.py)
+22) [Countdown clock](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/countdown.py)
 
 ## Other beginner projects:
 
