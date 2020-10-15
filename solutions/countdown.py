@@ -15,20 +15,51 @@ Subgoals:
     this project from a nightmare into a much simpler task
 '''
 
+from time import sleep
 from datetime import datetime
 from dateutil import parser, tz
 from dateutil.relativedelta import relativedelta
 
-months = {'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6,
-            'july': 7, 'august': 8, 'september': 9, 'october': 10, 'november': 11, 'december': 12}
-units = ['year', 'month', 'day', 'hour', 'minutes', 'seconds']
+def time_amount(time_unit: str, countdown: relativedelta) -> str:
+    """Return the time amount formatted with unit if not null."""
+    t = getattr(countdown, time_unit)
+    if t != 0 :
+        return f"{t} {time_unit}"
+    else:
+        return ""
 
-print('------Countdown------')
+def main():
+    """Calculates time delta and prints the countdown every 5 seconds."""
 
-XMAS = parser.parse("Dec 25, 2020, 0:00 AM")
-XMAS = XMAS.replace(tzinfo=tz.gettz("Hora estándar de Argentina"))
-now = datetime.now(tz=tz.tzlocal())
+    units = ['years', 'months', 'days', 'hours', 'minutes', 'seconds']
 
-countdown = relativedelta(XMAS, now)
-output = (t for tu in units if (t := time_amount(tu, countdown)))
-print(f"Countdown to XMAS 2020: ", ", ".join(output))
+    print('------Countdown------')
+
+    event = input("Enter the name of the event you want to track: \n")
+    while True:
+        date_input = input("Enter date in format YYYY-MM-DD HH:MM:SS: ")
+        try:
+            DATE = parser.parse(date_input)
+            DATE = DATE.replace(tzinfo=tz.tzlocal())
+        except:
+            continue
+        if DATE > datetime.now(tz=tz.tzlocal()):
+            break
+        else:
+            print("Date already passed, please enter another date.")
+
+    print('Press ctrl + c to stop')
+    while True:
+        now = datetime.now(tz=tz.tzlocal())
+        countdown = relativedelta(DATE, now)
+        output = []
+        for tu in units:
+            t = time_amount(tu, countdown)
+            if t:
+                output.append(t)
+        output_string = ", ".join(output)
+        print(f"Countdown to {event}: " + output_string)
+        sleep(5)
+
+if __name__ == "__main__":
+    main()
