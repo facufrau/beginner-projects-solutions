@@ -4,7 +4,7 @@ Write a simple game that allows the user and the computer to take turns selectin
 Both the computer and the player should start out at the same amount of health (such as 100),
 and should be able to choose between the three moves:
     The first move should do moderate damage and has a small range (such as 18-25).
-    The second move should have a large range of damage and can deal high or low damage (such as 10-35).
+    The second move should have a large range of damage and can deal high or low damage (such as 10-40).
     The third move should heal whoever casts it a moderate amount, similar to the first move.
 After each move, a message should be printed out that tells the user what just happened, and how much health the user and computer have. 
 Once the user or the computer's health reaches 0, the game should end.
@@ -41,11 +41,11 @@ class Player:
 
     def charged_hit(self, Player):
         """
-        This moves does more damage and has a wider range(10-35).
+        This moves does more damage and has a wider range(10-40).
         Updates target Player.health attribute.
         If the value is <= 0, returns 0 instead.
         """
-        damage = random.randint(10,35)
+        damage = random.randint(10,40)
         print(f"{self.name} used Charged Hit - Damage {damage}")
         Player.health -= damage
         if Player.health <= 0:
@@ -70,6 +70,8 @@ class Computer(Player):
     """
     def play(self, target):
         """Choose a move at random"""
+        # With the range of numbers generated with random handle the probability of using each move for AI.
+        # If health is below 35, probability of heal increased from 33% to 40%
         if self.health < 35:
             move = random.randint(1,10)
         else:
@@ -88,7 +90,7 @@ def ask_move():
     Hands exceptions and checks adequate input (only numbers 1, 2 and 3)
     """
     while True:
-        move = input("Choose a move to use (enter 1, 2 or 3)\n1 - Small Hit(18,25)    2 - Charged Hit(10,35)    3 - Heal(14,22)\n")
+        move = input("Choose a move to use (enter 1, 2 or 3)\n1 - Small Hit(18,25)    2 - Charged Hit(10,40)    3 - Heal(14,22)\n")
         try:
             move = int(move)
             if move in [1,2,3]:
@@ -96,8 +98,7 @@ def ask_move():
         except:
             print("Please enter 1, 2 or 3")
     return move
-    
-            
+
 def main():
     again = True
     while again:
@@ -112,7 +113,7 @@ def main():
         ai.show_health()
 
         while True:
-        # Ask the player for a move.
+            # Ask the player for a move.
             player_move = ask_move()
             if player_move == 1:
                 player.small_hit(ai)
@@ -120,17 +121,21 @@ def main():
                 player.charged_hit(ai)
             else:
                 player.heal()
+            #check if AI health reached 0 after user move.
+            if ai.health == 0:
+                print(f"Player {player.name} wins! - The computer lost")
+                break
+    
             # Make AI move.
             ai.play(player)
-            # Show status after both players played.
-            player.show_health()
-            ai.show_health()
-            # Check if one of the players health is 0.
+            # Check if Player health reached 0 after AI move.
             if player.health == 0:
                 print(f"The player {player.name} lost - The computer wins")
                 break
-            elif ai.health == 0:
-                print(f"Player {player.name} wins! - The computer lost")
+
+            # Show status after both players played a move and none lost.
+            player.show_health()
+            ai.show_health()
 
         while True:
             flag = input("Do you want to play again? (y/n):  ")
