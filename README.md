@@ -27,6 +27,7 @@ This repository contains my solutions for beginner projects in Jorge Gonzalez re
 20) [What is my number](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/what_is_my_number.py)
 21) [Factors of a number](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/factors.py)
 22) [Countdown clock](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/countdown.py)
+23) [Turn Based Pokemon Style Game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/turn_based_game.py)
 
 ## Other beginner projects:
 

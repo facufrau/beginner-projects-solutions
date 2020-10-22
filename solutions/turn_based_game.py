@@ -41,7 +41,7 @@ class Player:
 
     def charged_hit(self, Player):
         """
-        This moves does more damage and has a wider range.
+        This moves does more damage and has a wider range(10-35).
         Updates target Player.health attribute.
         If the value is <= 0, returns 0 instead.
         """
@@ -88,7 +88,7 @@ def ask_move():
     Hands exceptions and checks adequate input (only numbers 1, 2 and 3)
     """
     while True:
-        move = input("Choose a move to use (enter 1, 2 or 3)\n1 - Small Hit    2 - Charged Hit    3 - Heal\n")
+        move = input("Choose a move to use (enter 1, 2 or 3)\n1 - Small Hit(18,25)    2 - Charged Hit(10,35)    3 - Heal(14,22)\n")
         try:
             move = int(move)
             if move in [1,2,3]:
@@ -99,25 +99,46 @@ def ask_move():
     
             
 def main():
-    """ Main function for the game."""
-    print("User vs AI turn based game")
-    # Create the instances of Player and Computer objects.
-    player_name = input("Enter your name: ")
-    ai = Computer('Computer')
-    player = Player(player_name)
-    # Show starting values.
-    player.show_health()
-    ai.show_health()
+    again = True
+    while again:
+        """ Main function for the game."""
+        print("User vs AI turn based game")
+        # Create the instances of Player and Computer objects.
+        player_name = input("Enter your name: ")
+        ai = Computer('Computer')
+        player = Player(player_name)
+        # Show starting values.
+        player.show_health()
+        ai.show_health()
 
+        while True:
+        # Ask the player for a move.
+            player_move = ask_move()
+            if player_move == 1:
+                player.small_hit(ai)
+            elif player_move == 2:
+                player.charged_hit(ai)
+            else:
+                player.heal()
+            # Make AI move.
+            ai.play(player)
+            # Show status after both players played.
+            player.show_health()
+            ai.show_health()
+            # Check if one of the players health is 0.
+            if player.health == 0:
+                print(f"The player {player.name} lost - The computer wins")
+                break
+            elif ai.health == 0:
+                print(f"Player {player.name} wins! - The computer lost")
 
-    # Ask the player for a move.
-    player_move = ask_move()
-    if player_move == 1:
-        player.small_hit(ai)
-    elif player_move == 2:
-        player.charged_hit(ai)
-    else:
-        player.heal()
+        while True:
+            flag = input("Do you want to play again? (y/n):  ")
+            if flag.lower() in ['y','yes']:
+                break
+            elif flag.lower() in ['n', 'no']:
+                again = False
+                break
 
 if __name__ == '__main__':
     main()
