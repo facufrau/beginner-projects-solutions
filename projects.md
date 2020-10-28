@@ -16,9 +16,6 @@ Almost all projects can be completed in any language, but some were specifically
 
 Remember, if you don't know how to do something, Google is your friend.
 
-### Gitter Community
-Feel free to join us on our [Gitter channel](https://gitter.im/beginner-projects/Lobby) where we can code together, chat, and get help on just about anything.
-
 ## Project List
 *Projects are somewhat ordered by increasing difficulty.*
 - [99 Bottles](#99-bottles)
