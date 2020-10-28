@@ -1,20 +1,11 @@
 # Beginner Projects
 
-# UNMAINTAINED
-
-## Please fork this project if you want a copy, as it will be deleted in the near future.
-
-### If you are willing to maintain it and would like me to transfer ownership, please contact me.
-
 A list of projects for beginners.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Project List](#project-list)
 - [Projects](#projects)
-- [Solutions](#solutions)
-- [Contributing](#contributing)
-- [Credits](#credits)
 
 ## Getting Started
 If you're completely new to programming, you may want to look into a [tutorial](https://www.codecademy.com/learn/python). Before starting, you should already know the basics of programming such as variables, loops, dictionaries, and how to define functions, as well as how to run programs on your own machine.
@@ -489,77 +480,6 @@ do so), like Python and Java.
 - Write a program to check if a number is a palindrome or not.
 - For example 12321 is a palindrome since it reads the same forward and backwards. 
 
-   
-
-## Solutions
-- [aekanshd](https://github.com/aekanshd/beginner-projects/tree/master/solutions/python)
-- [Everstalk](https://github.com/Everstalk/BP)
-- [NickSchmiek](https://github.com/NickSchimek/Python-Beginner-Projects)
-- [luangthomas](https://github.com/luongthomas/Python-Mini-Projects)
-- [sumedhpd](https://github.com/sumedhpb/Beginner_project_solutions)
-- [hilkenbremen](https://github.com/hilkenbremen/beginner-projects)
-- [zakaer](https://github.com/zakaer/problem-solutions-)
-- [anuragkumarak95](https://github.com/anuragkumarak95/MyPython)
-- [AnanyaTyagi](https://github.com/AnanyaTyagi/BeginnerProjects)
-- [aviral36](https://github.com/aviral36/BeginnerProjects)
-- [avantikasharma](https://github.com/avantikasharma/beg_project)
-- [mattcarmody](https://github.com/mattcarmody/r-Beginner-Projects)
-- [ayseenver](https://github.com/ayseenver/BeginnerCPP)
-- [sdmaes18](https://github.com/sdmaes18/Beginner)
-- [jclane](https://github.com/jclane/beginner-project-solutions)
-- [uityh](https://github.com/uityh/Beginner-Project-Solutions)
-- [Sudz](https://github.com/sudz123/beginner_project_solutions/tree/master)
-- [MKJM2](https://github.com/MKJM2/beginner-project-solutions/tree/master)
-- [chuckytah](https://github.com/chuckytah/beginner-projects)
-- [Nikhil](https://github.com/imsnik/project-solution)
-- [Brad135971](https://github.com/Brad135971/beginner-project-solutions)
-- [spiraldancer](https://github.com/spiraldancer/beginner-project-solutions)
-- [parthkandpal](https://github.com/parthkandpal/beginner-project-solutions)
-- [mark-quinn](https://github.com/mark-quinn/random-but-useful-ruby-programs)
-- [Vishnu-Kaladharan](https://github.com/Vishnu-Kaladharan/beginner-project-solutions)
-- [Helkat](https://github.com/Helkat/beginner-project-solutions)
-- [My3bka](https://github.com/My3bka/beginner-project-solutions)
-- [vishal-vardhan](https://github.com/vishal-vardhan/beginner-project.git)
-- [hc65100](https://github.com/Hc165100/sample-project-solutions.git)
-- [areetaw](https://github.com/areetaw/beginner-projects-solutionst)
-- [madelinecodes](https://github.com/madelinecodes/beginner-projects)
-- [Recandi](https://github.com/Recandi/rust-beginner-projects)
-- [tmug94](https://github.com/tmug94/beginner_project_solutions)
-- [oscarada87](https://github.com/oscarada87/beginner-project-solutions)
-- [jelenam86](https://github.com/jelenam86/SolutionsBeginnerProjects)
-- [vpatyal](https://github.com/vpatyal/beginner-projects-solutions)
-- [zamerman](https://github.com/zamerman/beginner-projects-solutions)
-- [karthik](https://github.com/chkarthik257/beginner-project-solutions)
-- [sanveg-rane](https://github.com/sanveg-rane-13/begineer-project-solutions)
-- [vishaldhull09](https://github.com/vishaldhull09/beginner-project-solution)
-- [007vedant](https://github.com/007vedant/beginner-project-solutions)
-- [mgokayb](https://github.com/mgokayb/beginnerpythonprojects)
-- [anil-goudar](https://github.com/anil-goudar/beginner-project-solutions.git)
-- [breindy](https://github.com/breindy/99bottles-soln)
-- [marsmccrann04](https://github.com/marsmccrann04/beginner-project-solutions)
-- [sankarsh98](https://github.com/sankarsh98/beginner-project-solutions)
-- [SiddhantJain15](https://github.com/SiddhantJain15/beginner-projects-solutions)
-- [crosbymichael1](https://github.com/crosbymichael1/beginner-project-solutions)
-- [oakhtar147](https://github.com/oakhtar147/beginner-project-solutions)
-- [Darepapi](https://github.com/Darepapi/beginners-python-solutions)
-- [githubman2718](https://github.com/githubman2718/beginner-project-solutions)
-- [rivindu1289](https://github.com/rivindu1289/beginner-python-solutions)
-- [lsiepman](https://github.com/lsiepman/BeginnerProjectSolutions)
-- [DigBick17](https://github.com/DigBick17/beginner-project-solutions)
-- [bhavya-error404](https://github.com/bhavya-error404/Beginner-Project-Solution)
-- [MarsCandyBars](https://github.com/MarsCandyBars/beginner_project_solutions.git)
-- [yaizkazani](https://github.com/yaizkazani/yaizkazani/tree/master/jorgegonzales_py_practice)
-- [jarv1n](https://github.com/jarv1n/beginner-projects-solutions)
-- [VictoryWekwa](https://github.com/VictoryWekwa/Beginner-Projects)
-- [PrashantMhrzn](https://github.com/PrashantMhrzn/beginner-python-projects)
-- [sulavmhrzn](https://github.com/sulavmhrzn/beginners_python_project)
-- [AsherManangan](https://github.com/AsherManangan/beginner-projects/tree/master/beginner-projects-solutions)
-- [richardmoynihan](https://github.com/richardmoynihan/beginner-project-solutions)
-- [vaibhavb1693](https://github.com/vaibhavb1693/python-beginner-projects-solution)
-- [cgungaloo](https://github.com/cgungaloo/beginner-project-solutions)
-- [yyyoungha](https://github.com/yyyoungha/beginner-project-solutions)
-- [einyhime](https://github.com/einyhime/beginner-project-solutions)
-- [ms1835](https://github.com/ms1835/beginner-projects)
 
 ## Contributing
 Contributing to this repository in any way is encouraged.
@@ -568,11 +488,3 @@ Some ways to contribute are:
 - Adding solutions
 - Adding new projects to the project list
 - Editing the README
-
-### Contributing Solutions
-- Create a new repository called `beginner-project-solutions` (or some variation thereof).
-- Add at least one project solution to that repository.
-- Add a link to your new repository at the end of the list in the [Solutions](#solutions) section of this README with your GitHub username.
-
-## Credits
-Most of these project ideas were originally created on [reddit](https://reddit.com/r/beginnerprojects) where the original links are officially maintained [here](https://docs.google.com/document/d/1TyqD2_oDtiQIh_Y55J5RfeA91JJECc97xYIKM112H9I/edit?usp=sharing). The projects in this repository that are not in that list have been added by this project's contributors.
