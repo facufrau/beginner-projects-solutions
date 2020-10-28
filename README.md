@@ -1,7 +1,7 @@
 ## Beginner projects solutions:
 This repository contains my solutions for beginner projects in Jorge Gonzalez repository as shown below and personal projects I found on internet for practicing Python. As by 28 October 2020 the original repository was archived and marked as unmantained. The list of projects can be found in this repository by the names projects.md 
 
-### Solutions for https://github.com/facufrau/projects.md
+### Solutions for [projects found here](https://github.com/facufrau/beginner-projects-solutions/blob/master/projects.md)
 
 1) [99 bottles](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/99bottles.py)
 2) [Armstrong Number](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/armstrong.py)
