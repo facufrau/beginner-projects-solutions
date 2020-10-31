@@ -29,7 +29,8 @@ This repository contains my solutions for beginner projects in Jorge Gonzalez re
 22) [Countdown clock](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/countdown.py)
 23) [Turn Based Pokemon Style Game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/turn_based_game.py)
 
-## Other beginner projects:
+### Hyperskill Python Developer Projects:
+1) [Loan and credit calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/hyperskill_projects/creditcalc.py)
 
 ### Beginner projects that i found in internet and made my own version.
 
