@@ -4,9 +4,9 @@ This repository contains my solutions for beginner projects while I am learning 
 
 #### Contents:
 
-* Beginner Projects
-* Hyperskill Python Developer Projects
-* Other projects from my ideas
+* [Beginner Projects](https://github.com/facufrau/beginner-projects-solutions#solutions-for-beginner-projects)
+* [Hyperskill Python Developer Projects](https://github.com/facufrau/beginner-projects-solutions#hyperskill-python-developer-projects)
+* [Other projects from my ideas](https://github.com/facufrau/beginner-projects-solutions#beginner-projects-that-i-found-in-internet-and-made-my-own-version)
 
 ### Solutions for beginner-projects.
 
