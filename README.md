@@ -1,7 +1,18 @@
-## Beginner projects solutions:
-This repository contains my solutions for beginner projects in Jorge Gonzalez repository as shown below and personal projects I found on internet for practicing Python. As by 28 October 2020 the original repository was archived and marked as unmantained. The list of projects can be found in this repository by the names projects.md 
+## Learning Python projects :
+This repository contains my solutions for beginner projects while I am learning to code in Python 3.
 
-### Solutions for [projects found here](https://github.com/facufrau/beginner-projects-solutions/blob/master/projects.md)
+
+#### Contents:
+
+* Beginner Projects
+* Hyperskill Python Developer Projects
+* Other projects from my ideas
+
+### Solutions for beginner-projects.
+
+Original idea from [Jorge Gonzalez repository](https://github.com/facufrau/beginner-projects). As by 28 October 2020 the original repository was archived and marked as unmantained. 
+
+The list of projects can be found in this repository by the names [projects.md](https://github.com/facufrau/beginner-projects-solutions/blob/master/projects.md)
 
 1) [99 bottles](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/99bottles.py)
 2) [Armstrong Number](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/armstrong.py)
@@ -31,6 +42,8 @@ This repository contains my solutions for beginner projects in Jorge Gonzalez re
 
 ### Hyperskill Python Developer Projects:
 1) [Loan and credit calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/hyperskill_projects/creditcalc.py)
+2) [Coffee machine project - stages 4,5,6](https://github.com/facufrau/beginner-projects-solutions/tree/master/hyperskill_projects/coffee_machine)
+3) [Rock paper scissors game](https://github.com/facufrau/beginner-projects-solutions/blob/master/hyperskill_projects/rock-paper-scissors.py)
 
 ### Beginner projects that i found in internet and made my own version.
 
