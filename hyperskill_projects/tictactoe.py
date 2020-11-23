@@ -6,9 +6,8 @@ def print_board(moves):
     Prints the board from a list of moves.
     """
     print("---------")
-    print(f"| {moves[0]} {moves[1]} {moves[2]} |")
-    print(f"| {moves[3]} {moves[4]} {moves[5]} |")
-    print(f"| {moves[6]} {moves[7]} {moves[8]} |")
+    for i in range(0, 8, 3):
+        print(f"| {moves[i + 0]} {moves[i + 1]} {moves[i + 2]} |")
     print("---------")
 
 print_board(user_moves)
