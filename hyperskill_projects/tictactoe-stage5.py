@@ -36,23 +36,19 @@ def rows_wins(moves):
 def check_state(moves):
     """
     Check the state of the board from a list of moves.
-    Prints X/O wins, draw, game not finished or impossible.
+    Prints X/O wins or draw
     """
     x, o = count_moves(moves)
     total_moves = x + o
-    if abs(x - o) >= 2:
-        return "Impossible"
+    winned, won = rows_wins(moves)
+    
+    if winned == 0 and total_moves == 9:
+        return "Draw"
+    elif winned == 1:
+        return won + ' wins'
     else:
-        winned, won = rows_wins(moves)
-        if winned == 0:
-            if total_moves == 9:
-                return "Draw"
-            else:
-                return "Game not finished"
-        elif winned == 1:
-            return won + ' wins'
-        else:
-            return "Impossible"
+        return None
+
         
 def update_board(moves, i, mark):
     """
@@ -66,32 +62,42 @@ def update_board(moves, i, mark):
         return False
 
 def main():
-    user_moves = list(input("Enter cells: "))
+    user_moves = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
+    print(user_moves)
     print_board(user_moves)
-    #result = check_state(user_moves)
-    #print(result)
 
-    while True:
-        coords = input("Enter the coordinates: ").split()
-        try:
-            coords = [int(x) for x in coords]
-            col , row = coords[1], coords[0]
-        except:
-            print("You should enter numbers!")
-            continue
-
-        if (1 <= row <= 3) and (1 <= col <=3):
-            index  = ((3 - col) * 3) + (row - 1)  # Convert coordinates to list index.
-            mark = 'X'
-            if update_board(user_moves, index, mark):
-                print_board(user_moves)
-                break
-            else:
-                print("This cell is occupied! Choose another one!")
+    while not check_state(user_moves):
+        while True:
+            coords = input("Enter the coordinates: ").split()
+            try:
+                coords = [int(x) for x in coords]
+                col , row = coords[1], coords[0]
+            except:
+                print("You should enter numbers!")
                 continue
-        else:
-            print("Coordinates should be from 1 to 3!")
-            continue
 
+            if (1 <= row <= 3) and (1 <= col <=3):
+                index  = ((3 - col) * 3) + (row - 1)  # Convert coordinates to list index.
+                
+                # Count moves, if even 'X' moves, if odd 'O' moves.
+                x, o = count_moves(user_moves)
+                total_moves = x + o
+                
+                if total_moves % 2 == 0:
+                    mark = 'X'
+                else:
+                    mark = 'O'
+
+                if update_board(user_moves, index, mark):
+                    print_board(user_moves)
+                    break
+                else:
+                    print("This cell is occupied! Choose another one!")
+                    continue
+            else:
+                print("Coordinates should be from 1 to 3!")
+                continue
+    print(check_state(user_moves))
+                   
 if __name__ == "__main__":
     main()
