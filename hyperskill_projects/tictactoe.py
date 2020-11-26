@@ -1,6 +1,4 @@
 # Read input from user
-user_moves = list(input("Enter cells: "))
-
 def print_board(moves):
     """
     Prints the board from a list of moves.
@@ -41,7 +39,6 @@ def check_state(moves):
     Check the state of the board from a list of moves.
     Prints X/O wins, draw, game not finished or impossible.
     """
-    print_board(moves)
     x, o = count_moves(moves)
     total_moves = x + o
     if abs(x - o) >= 2:
@@ -57,6 +54,45 @@ def check_state(moves):
             return won + ' wins'
         else:
             return "Impossible"
+        
+def update_board(moves, i, mark):
+    """
+    Updates the moves list with the provided index and mark.
+    Returns True if the space was free, false if occupied.
+    """
+    if moves[i] == '_':
+        moves[i] = mark
+        return True
+    else:
+        return False
 
-result = check_state(user_moves)
-print(result)
+def main():
+    user_moves = list(input("Enter cells: "))
+    print_board(user_moves)
+    #result = check_state(user_moves)
+    #print(result)
+
+    while True:
+        coords = input("Enter the coordinates: ").split()
+        try:
+            coords = [int(x) for x in coords]
+            row , col = coords[1], coords[0]
+        except:
+            print("You should enter numbers!")
+            continue
+
+        if (1 <= row <= 3) and (1 <= col <=3):
+            index  = ((3 - col) * 3) + (row - 1)  # Convert coordinates to list index.
+            mark = 'X'
+            if update_board(user_moves, index, mark):
+                print_board(user_moves)
+                break
+            else:
+                print("This cell is occupied! Choose another one!")
+                continue
+        else:
+            print("Coordinates should be from 1 to 3!")
+            continue
+
+if __name__ == "__main__":
+    main()
