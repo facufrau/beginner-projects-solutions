@@ -1,4 +1,3 @@
-# Read input from user
 def print_board(moves):
     """
     Prints the board from a list of moves.
@@ -76,7 +75,7 @@ def main():
         coords = input("Enter the coordinates: ").split()
         try:
             coords = [int(x) for x in coords]
-            row , col = coords[1], coords[0]
+            col , row = coords[1], coords[0]
         except:
             print("You should enter numbers!")
             continue
