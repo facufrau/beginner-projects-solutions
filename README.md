@@ -39,6 +39,7 @@ The list of projects can be found in this repository by the names [projects.md](
 21) [Factors of a number](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/factors.py)
 22) [Countdown clock](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/countdown.py)
 23) [Turn Based Pokemon Style Game](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/turn_based_game.py)
+24) [A variant of 21 Blackjack](https://github.com/facufrau/beginner-projects-solutions/blob/master/solutions/21_variant.py)
 
 ### Hyperskill Python Developer Projects:
 1) [Loan and credit calculator](https://github.com/facufrau/beginner-projects-solutions/blob/master/hyperskill_projects/creditcalc.py)
