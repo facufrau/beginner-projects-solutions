@@ -19,13 +19,24 @@ In this project, you will make a game similar to Blackjack. In this version:
     So the point of your program is to allow the user to play the game described above.
     Subgoals:
         At the beginning of each round, print the round number (1 to 5).
-        Since this is a text base game, tell the user what is happening. For example, tell him/her when he/she draws a card, the name of the card, when they bust, etc.
-        Create a ranking system at the end of the game and tell the user their rank. For example, if the player finishes with 50-59 points they get an F, 60-69 is a D, 70-79 is a C, 80-89 is a B, and 90-100 is an A.
+
+        Since this is a text base game, tell the user what is happening. For example, tell him/her when he/she draws a card,
+        the name of the card, when they bust, etc.
+
+        Create a ranking system at the end of the game and tell the user their rank.
+        For example, if the player finishes with less than 50 points they get an F,
+        if they get between 50-59 points they get an E, 60-69 is a D, 70-79 is a C,
+        80-89 is a B, and 90-100 is an A.
+
         At the end of each round, print out the user's total score.
-        This may be the hardest part of the project, depending on how you wrote it. Make sure the deck has 4 of each type of card, and then remove cards as they are drawn. At the end of each round, make the deck have all of the cards again.
+
+        This may be the hardest part of the project, depending on how you wrote it.
+        Make sure the deck has 4 of each type of card, and then remove cards as they are drawn.
+        At the end of each round, make the deck have all of the cards again.
 
 '''
 import random
+from time import sleep
 
 #Create a Card and Deck classes.
 class Card:
@@ -72,14 +83,78 @@ class Deck:
 def main():
     """Main function for the game."""
     print("Welcome to the 21 variant game.")
+    input("Press enter to continue: ")
     # The player starts with 100 points.
-    # Initialize and shuffle deck
     game_score = 100
-    deck = Deck()
-    deck.shuffle()
 
+    # Loop for playing 5 rounds.
+    for i in range(5):
+        # Initialize and shuffle deck, each round starts with all cards.
+        deck = Deck()
+        deck.shuffle()
+
+        # Start round and give 2 cards to user, calculate round score.
+        print(f"-----------\nRound {i+1}\n-----------")
+        player_hand = [deck.draw_card() for i in [1,2]]
+        sleep(1)
+        print(f"You drew: ")
+        sleep(1)
+        player_hand[0].show()
+        player_hand[1].show()
+        round_score = player_hand[0].val + player_hand[1].val
+
+        # Loop for playing the round after starting draw of 2 cards.
+        while True:
+            print(f"Current score {round_score}")
+
+            # Verify that the user enters allowed inputs.
+            options = ['1','2']
+            while True:
+                choice = input("Enter: 1 - Draw another card   or   2 - End round\n")
+                if choice in options:
+                    break
+                else:
+                    print("Please enter only '1' or '2'")
+
+            # Draw a new card.
+            if choice == '1':
+                card = deck.draw_card()
+                sleep(1)
+                print(f"You drew ")
+                card.show()
+                round_score += card.val
+
+                # Check if the score is more than 21 then end round.
+                if round_score > 21:
+                    lost_points = 21
+                    sleep(1)
+                    print(f"You busted with a score of {round_score}, you lose 21 points")
+                    break
+
+            # End current round.
+            elif choice == '2':
+                lost_points = 21 - round_score
+                sleep(1)
+                print(f"Your round score was {round_score} and you lose {lost_points} points")
+                break
+
+        game_score -= lost_points
+        print(f"Your current game score is {game_score} points.")
+
+    print("------------\nGame ended\n------------")
+    print(f"Your final score is {game_score}")
+    if game_score >= 90:
+        print("Your rank is: A")
+    elif game_score >= 80:
+        print("Your rank is: B")
+    elif game_score >= 70:
+        print("Your rank is: C")
+    elif game_score >= 60:
+        print("Your rank is: D")
+    elif game_score >= 50:
+        print("Your rank is: E")
+    else:
+        print("Your rank is F")
 
 if __name__ == '__main__':
     main()
-
-
