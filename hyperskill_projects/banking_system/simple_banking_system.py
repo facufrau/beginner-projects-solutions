@@ -1,4 +1,4 @@
-# Simple banking system - stage 1/4
+# Simple banking system - stage 2/4
 import random
 from sys import exit
 
@@ -17,7 +17,7 @@ def main():
         elif option == 2:
             user_card = input("\nEnter your card number:\n")
             user_pin = input("Enter your PIN:\n")
-
+            check = True
             try:
                 database[user_card]['pin'] != user_pin
                 check = True
@@ -46,9 +46,23 @@ def main():
 def create_acc():
     """ Generates a credit card number and pin """
     IIN = '400000'  # Issuer Identification Number (IIN)
-    CAN = str(random.randint(0, 10 ** 10)).zfill(10)  # customer account number
-
+    CAN = str(random.randint(0, 10 ** 9)).zfill(9)  # customer account number
     card = IIN + CAN
+    card_num_list = [int(x) for x in card]
+    checksum = 0
+    for i, n in enumerate(card_num_list):
+        if i % 2 == 0:
+            current = n * 2
+            if current > 9:
+                current -= 9
+            checksum += current
+        else:
+            checksum += n
+    if checksum % 10 == 0:
+        card += str(0)
+    else:
+        card += str(10 - checksum % 10)
+        
     pin = str(random.randint(0, 10000)).zfill(4)  # 4 digit pin (0000-9999)
     print(f"\nYour card has been created")
     print(f"Your card number:\n{card}")
