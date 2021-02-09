@@ -1,41 +1,52 @@
-# Simple banking system - stage 2/4
+# Simple banking system - stage 3/4
 import random
 from sys import exit
+import sqlite3
+
+conn = sqlite3.connect('card.s3db')
+# Create table
+cur = conn.cursor()
+cur.execute('DROP TABLE IF EXISTS card')
+conn.commit()
+cur.execute('CREATE TABLE card (id INTEGER, number TEXT, pin TEXT, balance INTEGER DEFAULT 0);')
+conn.commit()
 
 def main():
     """Main function for the app."""
     menu = "1. Create an account\n2. Log into account\n0. Exit"
     submenu = "1. Balance\n2. Log out\n0. Exit"
 
-    database = {}
     while True:
         print(menu)
         option = int(input())
+        id_num = 0
         if option == 1:
             card, pin = create_acc()
-            database[card] = {'pin': pin, 'balance': 0}
+            id_num += 1
+            row = [id_num, card, pin]
+            cur.execute('INSERT INTO card (id, number, pin) VALUES (?,?,?)', row)
+            conn.commit()
         elif option == 2:
             user_card = input("\nEnter your card number:\n")
             user_pin = input("Enter your PIN:\n")
-            check = True
-            try:
-                database[user_card]['pin'] != user_pin
-                check = True
-            except KeyError:
-                check = False
-
-            if check == False or database[user_card]['pin'] != user_pin:
+            cur.execute("SELECT number, pin, balance FROM card WHERE number=(?)", (user_card,))
+            conn.commit()
+            response = cur.fetchone()
+            
+            print(response)
+            if not response or response[1] != user_pin:
                 print("\nWrong card number or PIN!\n")
             else:
                 print("\nYou have successfully logged in!\n")
-                print(submenu)
                 while True:
+                    print(submenu)
                     sub_option = int(input())
                     if sub_option == 1:
-                        balance = database[user_card]['balance']
+                        balance = response[2]
                         print(f"\nBalance: {balance}\n")
                     elif sub_option == 2:
                         print("\nYou have successfully logged out!\n")
+                        break
                     elif sub_option == 0:
                         print("\nBye!")
                         exit()
